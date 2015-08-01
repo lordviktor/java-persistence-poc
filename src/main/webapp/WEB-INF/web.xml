@@ -9,10 +9,23 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+	<listener>
+		<listener-class>io.github.lordviktor.javaPersistencePoc.servlet.dataAccessLayer.JPAContextListener</listener-class>
+	</listener>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring/spring-context.xml</param-value>
 	</context-param>
+
+
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>io.github.lordviktor.javaPersistencePoc.servlet.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/api/servlet/user</url-pattern>
+	</servlet-mapping>
 
 </web-app>
