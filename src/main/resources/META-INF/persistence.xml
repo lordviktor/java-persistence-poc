@@ -8,6 +8,8 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
+		<!-- JPA nao contempla em sua especificação a feature de package scan
+		Logo, cada classe que será uma entidade precisa ser informada. -->
 		<class>io.github.lordviktor.javaPersistencePoc.entity.Pastoral</class>
 		<class>io.github.lordviktor.javaPersistencePoc.entity.Post</class>
 		<class>io.github.lordviktor.javaPersistencePoc.entity.User</class>
@@ -19,7 +21,7 @@
 			<property name="javax.persistence.jdbc.password" value="" />
 
 
-			<!-- Hibernate specific properties (outside jpa) -->
+			<!-- Hibernate specific properties (fora da especificação jpa) -->
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
 			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />

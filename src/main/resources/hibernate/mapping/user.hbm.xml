@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="io.github.lordviktor.javaPersistencePoc.entity.User" table="USER">
+      
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      
+      <property name="name" column="dsname" type="string" unique="true" unique-key="UK_USER_NAME"/> 
+      <!-- Veja aqui a diff entre o nome do campo e o nome da tabela
+      	todas as configs feitas aqui podem ser feitas por annotations.
+      	Podemos definir também nomes de FK`s e indices :)
+      	
+      	isso é igual a:
+      	
+      	@Column(name="dsname", unique=true)
+      	private String name;
+      
+       -->
+   </class>
+</hibernate-mapping>

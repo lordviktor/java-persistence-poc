@@ -18,15 +18,15 @@ public class JPAContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("javaPersistencePocPU");
-        servletContextEvent.getServletContext().setAttribute("emf", emf);
+        ServletContext servletContext = servletContextEvent.getServletContext();
+        EntityManagerFactory emf = (EntityManagerFactory) servletContext.getAttribute("emf");
+        emf.close();
     }
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        ServletContext servletContext = servletContextEvent.getServletContext();
-        EntityManagerFactory emf = (EntityManagerFactory) servletContext.getAttribute("emf");
-        emf.close();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("javaPersistencePocPU");
+        servletContextEvent.getServletContext().setAttribute("emf", emf);
     }
 
 }

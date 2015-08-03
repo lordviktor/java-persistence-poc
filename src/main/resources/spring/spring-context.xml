@@ -30,12 +30,12 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
+	<!-- Bean responsavel por efetuar uma ponte entre o hibernate e as API's JPA -->
  	<bean id="hibernateJpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<!-- <property name="dataSource" ref="dataSource" /> -->
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
 		<property name="persistenceUnitName" value="javaPersistencePocPU" />
 	</bean>
