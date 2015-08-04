@@ -1,7 +1,9 @@
 package io.github.lordviktor.javaPersistencePoc.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -10,20 +12,21 @@ import javax.persistence.ManyToOne;
 public class User {
 
     @Id
-    @GeneratedValue
-    private Long id;
-    
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @Column(name = "dsname")
     private String name;
-    
+
     @ManyToOne
     @JoinColumn
     private Pastoral admin;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,5 +37,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }

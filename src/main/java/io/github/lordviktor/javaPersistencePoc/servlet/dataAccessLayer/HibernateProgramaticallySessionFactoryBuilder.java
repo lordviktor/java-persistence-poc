@@ -49,14 +49,17 @@ public class HibernateProgramaticallySessionFactoryBuilder implements ServletCon
 
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, H2Dialect.class.getName());
-        properties.put(Environment.DRIVER, "org.h2.Driver");// nao temos dependecia com esta
-                                                            // biblioteca pois ela é fornecida
-                                                            // direto no servidor no classpath do
-                                                            // container.
-        properties.put(Environment.URL, "jdbc:h2:mem:javapersistencepoc;DB_CLOSE_ON_EXIT=FALSE");
-        properties.put(Environment.USER, "sa");
-        properties.put(Environment.PASS, "");
-        properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+//        properties.put(Environment.DRIVER, "org.h2.Driver");// nao temos dependecia com esta
+//                                                            // biblioteca pois ela é fornecida
+//                                                            // direto no servidor no classpath do
+//                                                            // container.
+//        properties.put(Environment.URL, "jdbc:h2:mem:javapersistencepoc;DB_CLOSE_ON_EXIT=FALSE");
+//        properties.put(Environment.USER, "sa");
+//        properties.put(Environment.PASS, "");
+
+        properties.put(Environment.DATASOURCE, "java:comp/env/jdbc/javaPersistecepocDS");
+        
+        properties.put(Environment.HBM2DDL_AUTO, "update");
         properties.put(Environment.SHOW_SQL, true);
         properties.put(Environment.FORMAT_SQL, true);
         properties.put(AvailableSettings.NAMING_STRATEGY, ImprovedNamingStrategy.class.getName());

@@ -38,11 +38,13 @@ public class UserServlet extends HttpServlet {
 
         LOG.info("Servlet call on GET method. Listing users.");
 
+
+        usingSpringData();
+        
         usingJpaSpecification();
 
         usingProgramaticallyHibernate();
         
-        usingSpringData();
     }
     
     /**
@@ -60,6 +62,11 @@ public class UserServlet extends HttpServlet {
         WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         UserRepository userRepository = webApplicationContext.getBean(UserRepository.class);
         LOG.info("Listing users :)");
+        
+        User newUser = new User();
+        newUser.setName("Teste " + System.currentTimeMillis());
+        userRepository.save(newUser);
+        
         List<User> users = userRepository.findAll();
         LOG.info("Users {}", users);
     }
