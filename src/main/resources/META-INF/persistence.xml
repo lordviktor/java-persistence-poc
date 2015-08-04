@@ -5,7 +5,7 @@
 
 	<persistence-unit name="javaPersistencePocPU"
 		transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     	<non-jta-data-source>java:comp/env/jdbc/javaPersistecepocDS</non-jta-data-source>
 
 		<!-- JPA nao contempla em sua especificação a feature de package scan
