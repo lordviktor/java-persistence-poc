@@ -6,15 +6,15 @@
 
 	<display-name>persistence-poc</display-name>
 
-	<!-- <listener>
+	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener> -->
-<!-- 	<listener> -->
-<!-- 		<listener-class>io.github.lordviktor.javaPersistencePoc.servlet.dataAccessLayer.JPAContextListener</listener-class> -->
-<!-- 	</listener> -->
-<!-- 	<listener> -->
-<!-- 		<listener-class>io.github.lordviktor.javaPersistencePoc.servlet.dataAccessLayer.HibernateProgramaticallySessionFactoryBuilder</listener-class> -->
-<!-- 	</listener> -->
+	</listener>
+	<listener>
+		<listener-class>io.github.lordviktor.javaPersistencePoc.servlet.dataAccessLayer.JPAContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>io.github.lordviktor.javaPersistencePoc.servlet.dataAccessLayer.HibernateProgramaticallySessionFactoryBuilder</listener-class>
+	</listener>
 	<listener>
 		<listener-class>io.github.lordviktor.javaPersistencePoc.servlet.dataAccessLayer.HibernateManualSessionFactoryBuilder</listener-class>
 	</listener>	

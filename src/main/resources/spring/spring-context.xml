@@ -22,7 +22,7 @@
 	<!-- Enable @Transaction support -->
 	<tx:annotation-driven />
 	
-	<jpa:repositories base-package="io.github.lordviktor.javawebpoc.persistence.repository" />
+	<jpa:repositories base-package="io.github.lordviktor.javaPersistencePoc.repository" />
 
 	<!-- @Transactional transaction manager -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

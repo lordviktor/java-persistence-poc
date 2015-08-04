@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 public class Pastoral {
@@ -15,7 +16,8 @@ public class Pastoral {
 
     private String name;
 
-    @OneToMany(mappedBy = "admin")
+//    @OneToMany(mappedBy = "admin")
+    @Transient
     private Set<User> admins;
     
     @OneToMany(mappedBy="pastoral")
