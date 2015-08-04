@@ -50,6 +50,9 @@ public class UserServlet extends HttpServlet {
      * Na real, utilizamos as primeiras duas linhas soh por que esta classe nao eh um bean gerenciado
      * assim, de uma classe gerida pelo servidor de applicacao nós buscamos uma classe de dentro do spring.
      * 
+     * Destaque q depois de configurado, nao escrevemos uma linha de codigo, só chamamos o metodo declarado
+     * na interface JPARepository.
+     * 
      */
     private void usingSpringData(){
         LOG.info("Using spring data to list users.");
