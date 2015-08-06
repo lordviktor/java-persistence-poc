@@ -25,10 +25,6 @@ public class Post {
 
     private String content;
 
-    @ManyToOne
-    @JoinColumn
-    private Pastoral pastoral;
-
     @ElementCollection
     private Set<String> tags;
 
@@ -62,14 +58,6 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public Pastoral getPastoral() {
-        return pastoral;
-    }
-
-    public void setPastoral(Pastoral pastoral) {
-        this.pastoral = pastoral;
     }
 
     public Set<String> getTags() {

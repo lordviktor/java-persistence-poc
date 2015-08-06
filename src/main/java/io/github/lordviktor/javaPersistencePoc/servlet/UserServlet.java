@@ -34,7 +34,6 @@ public class UserServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // super.doGet(req, resp);
 
         LOG.info("Servlet call on GET method. Listing users.");
 
@@ -44,7 +43,6 @@ public class UserServlet extends HttpServlet {
         usingJpaSpecification();
 
         usingProgramaticallyHibernate();
-        
     }
     
     /**
